@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# proyecto-2
-
-=======
 # Proyecto-2
 Isabel Pérez | Dreyan Franco
 
@@ -30,4 +26,3 @@ $ npm run dev
 | 14 | get | /editar-tienda?id=xxx | Muestra el formulario de edición de tienda (solo ADMIN) |
 | 15 | post | /editar-tienda?id=xxx | Guarda en la BBDD los cambios |
 | 16 | get | /eliminar-tienda?id=xxx | Elimina de la BBDD la tienda |
->>>>>>> 94de310de14c7953e074080fa297769e2f2afb3e
