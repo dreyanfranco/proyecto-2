@@ -16,6 +16,11 @@ const plantsSchema = new mongoose.Schema({
         trim: true,
         set: text => text.charAt(0).toUpperCase() + text.substring(1) 
     },
+    imageUrl:{
+        type: String,
+        required:true,
+        trim: true,
+    },
     description: {
         type: String,
         required: true,
@@ -52,7 +57,7 @@ const plantsSchema = new mongoose.Schema({
     },
     ligth: {
         type: String,
-        enum: ['Luminosidad con luz indirecta','Luz indirecta' , 'Necesita de espacios luminosos sin incidencia directa del sol','Necesita de espacios sombríos', 'Espacios luminosos sin sol directo','Espacios poco luminosos'],
+        enum: ['Luminosidad con luz indirecta','Luz indirecta' , 'Necesita de espacios luminosos sin incidencia directa del sol','Espacios sombríos', 'Espacios luminosos sin sol directo','Espacios poco luminosos'],
         
     },
     location: {
@@ -69,6 +74,6 @@ const plantsSchema = new mongoose.Schema({
     timestamps: true
 })
 
-const Plant = mongoose.model('Plant', plantSchema)        
+const Plant = mongoose.model('Plant', plantsSchema)        
 
 module.exports = Plant
