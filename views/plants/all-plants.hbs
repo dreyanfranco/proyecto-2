@@ -1,3 +1,25 @@
-<h1>estas en listado de plantas</h1>
+  
+<div class="container plants-index">
 
-<h2>Sé amable con tus plantas</h2>
+
+
+  <h1 style="font-weight: 100">Nuestras Plantas:</h1>
+  <a href="/plantas/crear-planta" class="btn btn-sm btn-dark">Añadir plantas</a>
+<div class="row justify-content-center">
+
+  {{#each plants}}
+  <div class="col-md-4">
+  <figure>
+  <img src="{{imageUrl}}" alt="{{name}}">
+  </figure>
+  <h4>{{name}}</h4>
+  
+  <p><strong>Cuidado: </strong> {{care}}</p>
+      <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+  <hr>
+  </div>
+  {{/each}}
+</div>
+
+
+</div>
