@@ -35,7 +35,7 @@ router.post("/registro", (req, res, next) => {
         })
         .catch(error => next(error))
 })
-
+//Iniciar Sesión
 router.get("/iniciar-sesion", (req, res) => res.render("auth/login", { errorMsg: req.flash("error") }))
 router.post("/iniciar-sesion", passport.authenticate("local", {
     successRedirect: "/",
@@ -43,11 +43,10 @@ router.post("/iniciar-sesion", passport.authenticate("local", {
     failureFlash: true,
     passReqToCallback: true
 }))
-
+//Cerrar Sesión
 router.get('/cerrar-sesion', (req, res) => {
     req.logout()
     res.redirect("/iniciar-sesion")
 })
-
 
 module.exports = router

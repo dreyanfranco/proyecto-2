@@ -4,7 +4,7 @@
 
             <h1>Añadir nueva planta:</h1>
 
-            <form action="/crear-planta" method="POST">
+            <form action="/plantas/crear-planta" method="POST">
                     <div class='form-group'>
                         <label for='name'>Nombre:</label>
                         <input name='name' type='text' class='form-control' id='name'>
@@ -33,45 +33,53 @@
                         <label for="water">Riego:</label>
                         <select name="water" class="form-control" id="water">
                             <option>Seleccionar</option>
-                            {{#each plants}}
-                            <option value="{{_id}}">{{water}}</option>
-                            {{/each}}
+                           
+                            <option value="eventualmente">Eventualmente</option>
+                            <option value="una vez cada dos semanas">Una vez cada dos semanas</option>
+                            <option value="una vez a la semana">Una vez a la semana</option>
+                            <option value="cada 2 días">Cada 2 días</option>
+                            <option value="todos los días">Todos los días</option>
+                            
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="spray">Pulverizar:</label>
                         <select name="spray" class="form-control" id="spray">
                             <option>Seleccionar</option>
-                            {{#each plants}}
-                            <option value="{{_id}}">{{spray}}</option>
-                            {{/each}}
+                            <option value="no pulverizar">No pulverizar</option>
+                            <option value="eventualmente">Eventualmente</option>
+                            <option value="una vez a la semana">Una vez a la semana</option>
+                            <option value="cada 2 días">Cada 2 días</option>
+                            <option value="todos los días">Todos los días</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="care">Cuidado:</label>
                         <select name="care" class="form-control" id="care">
                             <option>Seleccionar</option>
-                            {{#each plants}}
-                            <option value="{{_id}}">{{care}}</option>
-                            {{/each}}
+                            <option value="casi inmortal">Casi inmortal</option>
+                            <option value="fácil de cuidar">Fácil de cuidar</option>
+                            <option value="necesita cuidados">Necesita cuidados</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="ligth">Luz:</label>
                         <select name="ligth" class="form-control" id="ligth">
                             <option>Seleccionar</option>
-                            {{#each plants}}
-                            <option value="{{_id}}">{{ligth}}</option>
-                            {{/each}}
+                            <option value="Luminosidad con luz indirecta">Luminosidad con luz indirecta</option>
+                            <option value="Luz indirecta">Luz indirecta</option>
+                            <option value="Necesita de espacios luminosos sin incidencia directa del sol">Necesita de espacios luminosos sin incidencia directa del sol</option>
+                            <option value="Espacios sombríos">Espacios sombríos</option>
+                            <option value="Espacios luminosos sin sol directo">Espacios luminosos sin sol directo</option>
+                            <option value="Espacios luminosos sin sol directo">Espacios poco luminosos</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="location">Ubicación:</label>
                         <select name="location" class="form-control" id="location">
                             <option>Seleccionar</option>
-                            {{#each plants}}
-                            <option value="{{_id}}">{{location}}</option>
-                            {{/each}}
+                            <option value="Es una planta de interior">Es una planta de interior</option>
+                            <option value="Es una planta de exterior">Es una planta de exterior</option>
                         </select>
                     </div>
                     <div class="form-group">
