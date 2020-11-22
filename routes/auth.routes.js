@@ -6,6 +6,40 @@ const bcryptSalt = 10;
 
 const User = require('../models/user.model');
 
+router.get('/editar-perfil', (req, res, next) => {
+    const userId = req.query.id
+    User
+        .findById(userId)
+        .then(theUser => res.render('edit-profile', theUser))
+        .catch(error => next(new Error(error)))
+})
+router.post('/editar-perfil', (req,res,next)=>{
+    const userId = req.query.id
+    const { name, username, password } = req.body
+    
+    User
+        .findByIdAndUpdate(userId, { name, username, password }, { new: true })
+        .then(() => res.redirect('/perfil'))
+        .catch(error => next(new Error(error)))
+})
+
+router.get('/eliminar-perfil', (req, res, next) => {
+    const userId = req.query.id
+    User
+        .findByIdAndDelete(userId)
+        .then(res.redirect('/'))
+        .catch(error => next(new Error(error)))
+})
+
+router.get('/perfil/:user_id', (req, res, next) => {
+    // const userId = req.params.user_id
+    User
+        .findById(req.params.user_id)
+        .then(theUser => res.render('profile', theUser))
+        .catch(err => next(new Error(err)))
+})
+
+
 //Registro
 router.get("/registro", (req, res) => res.render("auth/signup"));
 router.post("/registro", (req, res, next) => {
@@ -38,7 +72,7 @@ router.post("/registro", (req, res, next) => {
 //Iniciar Sesión
 router.get("/iniciar-sesion", (req, res) => res.render("auth/login", { errorMsg: req.flash("error") }))
 router.post("/iniciar-sesion", passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/perfil/",
     failureRedirect: "/iniciar-sesion",
     failureFlash: true,
     passReqToCallback: true

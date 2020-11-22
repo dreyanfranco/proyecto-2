@@ -29,7 +29,30 @@ router.get('/eliminar', (req, res, next) => {
       .findByIdAndDelete(req.query.id)
       .then(() => res.redirect('/plantas'))
       .catch(err => next(new Error(err)))
-  })
+})
+  
+// Editar planta
+//Editar tienda
+router.get('/editar-planta', (req, res, next) => {
+    const plantId = req.query.id
+
+    Plant
+        .findById(plantId)
+        .then(thePlant => res.render('plants/edit-plant', thePlant))
+        .catch(error => next(new Error(error)))
+})
+
+router.post('/editar-planta', (req, res, next) => {
+    const plantId = req.query.id
+
+    const { name, scientificName, imageUrl, description, climate, heigth, water, spray, care, ligth, location, petFriendly } = req.body
+
+    Plant
+        .findByIdAndUpdate(plantId, { name, scientificName, imageUrl, description, climate, heigth, water, spray, care, ligth, location, petFriendly }, { new: true })
+        .then(() => res.redirect('/plantas'))
+        .catch(error => next(new Error(error)))
+})
+
 // Detalles de planta
 router.get('/detalle/:plant_id', (req, res) => {
 
