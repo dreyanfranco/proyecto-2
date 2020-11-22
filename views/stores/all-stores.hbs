@@ -1,12 +1,22 @@
-<h1>estas en listado de tiendas</h1>
-
-<div class="containter">
+<div class="container">
+    <h1>Nuestras tiendas:</h1>
+    <a href="/tiendas/crear-tienda" class="btn btn-sm btn-dark">Añadir tienda</a>
     <div class="row justify-content-center">
-        <div class="col-md-7">
+        {{#each stores}}
+        <div class="col-md-4">
+            <h3>{{name}}</h3>
+            <p>{{direction}}</p>
+            <a href="/tiendas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+            <a href="/tiendas/eliminar-tienda?id={{id}}" class="btn btn-sm btn-dark">Eliminar</a>
+            <a href="/tiendas/editar-tienda?id={{id}}" class="btn btn-sm btn-dark">Editar</a>
+        </div>
+        {{/each}}
+        <div class="col-md-8">
             <figure id="storesMap"></figure>
             <a href="/" class="btn btn-dark">Inicio</a>
         </div>
     </div>
+
 </div>
 
 
