@@ -14,6 +14,22 @@ router.get('/crear-planta', (req, res, next) => {
     .then(allThePlants => res.render('plants/new-plant', { plants: allThePlants}))
     .catch(err => next(new Error(err)))
 })
+router.post('/crear-planta', (req, res, next) => {
+
+    const { name, scientificName, imageUrl, description, climate, heigth, water, spray, care, ligth, location, petFriendly} = req.body
+
+     Plant
+        .create({ name, scientificName, imageUrl, description, climate, heigth, water, spray, care, ligth, location, petFriendly })
+        .then(() => res.redirect('/plantas'))
+        .catch(err => next(new Error(err)))
+})
+//Eliminar Planta
+router.get('/eliminar', (req, res, next) => {
+    Plant
+      .findByIdAndDelete(req.query.id)
+      .then(() => res.redirect('/plantas'))
+      .catch(err => next(new Error(err)))
+  })
 // Detalles de planta
 router.get('/detalle/:plant_id', (req, res) => {
 
