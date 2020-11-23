@@ -6,8 +6,9 @@
     <h1>Estas en tu perfil {{user.username}}</h1>
     <p>Tu rol es {{user.role}}</p>
     <h3>Estas son tus plantas</h3>
-    
-    <p>{{user.plants}}</p>
+    {{#with plants}}
+    <p>{{this.[0].name}}</p>
+    {{/with}}
  
  
 

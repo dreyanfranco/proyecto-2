@@ -37,14 +37,13 @@ router.get('/perfil', (req, res, next) => {
     User
         .findById(req.user._id)
         .populate('plants')
-        .then( theUser => res.render('profile', theUser))
+        .then((theUser) => res.render('profile', theUser))
         .catch(err => next(new Error(err)))
 })
 
 router.get('/perfil/agregar-planta/:plant_id', (req, res, next) => {
     User
         .findByIdAndUpdate(req.user._id, { $push: { plants: req.params.plant_id } }, { new: true })
-        .populate('plants')
         .then(() => res.redirect('/perfil'))
         .catch(err => next(new Error(err)))
 })
