@@ -1,20 +1,21 @@
 <div class="container">
     <h1>Nuestras tiendas:</h1>
     <a href="/tiendas/crear-tienda" class="btn btn-sm btn-dark">Añadir tienda</a>
-    <div class="row justify-content-center">
-        {{#each stores}}
+    <div class="row">
+        <div class="col-md-8">
+            <figure id="storesMap"></figure>
+            <a href="/" class="btn btn-dark">Inicio</a>
+        </div>
         <div class="col-md-4">
+            {{#each stores}}
             <h3>{{name}}</h3>
             <p>{{direction}}</p>
             <a href="/tiendas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
             <a href="/tiendas/eliminar-tienda?id={{id}}" class="btn btn-sm btn-dark">Eliminar</a>
             <a href="/tiendas/editar-tienda?id={{id}}" class="btn btn-sm btn-dark">Editar</a>
+            {{/each}}
         </div>
-        {{/each}}
-        <div class="col-md-8">
-            <figure id="storesMap"></figure>
-            <a href="/" class="btn btn-dark">Inicio</a>
-        </div>
+
     </div>
 
 </div>
@@ -24,5 +25,4 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/javascripts/styles.js"></script>
 <script src="/javascripts/stores-map.js"></script>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxQfr-VaQqyOGCylf9PbMafybyjxJzVIU&callback=initApp"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{process.env.key}}&callback=initApp"></script>

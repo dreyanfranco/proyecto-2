@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const plantsSchema = new mongoose.Schema({
     name: {
@@ -68,7 +69,11 @@ const plantsSchema = new mongoose.Schema({
     petFriendly: {
         type:Boolean,
         default: true,
-    }
+    },
+    stores: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Store'
+    }]
 
 }, {
     timestamps: true

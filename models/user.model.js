@@ -10,10 +10,10 @@ const userSchema = new Schema({
         enum: ['ADMIN', 'USER'],
         default: 'USER'
     },
-    // plants: [{
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Plant'       
-    // }]
+    plants: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Plant'       
+    }]
 
 
 }, {

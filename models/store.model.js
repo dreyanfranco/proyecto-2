@@ -23,7 +23,11 @@ const storeSchema = new Schema({
             type: String
         },
         coordinates: [Number]
-    }
+    },
+    plants: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Plant' 
+    }]
 
 }, {
 
