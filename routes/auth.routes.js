@@ -6,6 +6,8 @@ const bcryptSalt = 10;
 
 const User = require('../models/user.model');
 
+
+
 router.get('/editar-perfil', (req, res, next) => {
     const userId = req.query.id
     User
@@ -13,7 +15,7 @@ router.get('/editar-perfil', (req, res, next) => {
         .then(theUser => res.render('edit-profile', theUser))
         .catch(error => next(new Error(error)))
 })
-router.post('/editar-perfil', (req,res,next)=>{
+router.post('/editar-perfil', (req, res, next) => {
     const userId = req.query.id
     const { name, username, password } = req.body
     
@@ -38,6 +40,8 @@ router.get('/perfil/:user_id', (req, res, next) => {
         .then(theUser => res.render('profile', theUser))
         .catch(err => next(new Error(err)))
 })
+
+
 
 
 //Registro
