@@ -63,7 +63,13 @@ router.post("/registro", (req, res, next) => {
     const { name,username, password, role } = req.body
 
     if (username === "" || password === "") {
-        res.render("auth/signup", { errorMsg: "Fill the fields" })
+        res.render("auth/signup", {
+            errorMsg: "Llena todos los campos" })
+        return
+    }
+    if (password.length < 6 || !password.match(/[A-Z][a-z]/) || !password.match(/[0-9]/)) {
+        res.render("auth/signup", {
+            errorMsg: "Incluye una mayúscula y un número en tu contraseña."})
         return
     }
 
@@ -71,7 +77,7 @@ router.post("/registro", (req, res, next) => {
         .findOne({ username })
         .then(user => {
             if (user) {
-                res.render("auth/signup", { errorMsg: "this user already exists" })
+                res.render("auth/signup", { errorMsg: "this user already exists"})
                 return
             }
 

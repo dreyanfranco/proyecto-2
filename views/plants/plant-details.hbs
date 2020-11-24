@@ -3,17 +3,26 @@
     <div class="col-md-5">
       <img src="{{imageUrl}}" alt="{{name}}">
     </div>
-    <div class="col-md-7">
+    <div class="col-md-12">
       <h2>{{name}}</h2>
-      <p><small><strong>{{scientificName}}</strong></small></p>
+      <p><small><strong><i>{{scientificName}}</i></strong></small></p>
       <p><strong>Cuidado: </strong> {{care}}</p>
-      <p>{{description}}</p>
-
-
+      <p><strong>Descripción:</strong> {{description}}</p>
+      <p><strong>Clima:</strong> {{climate}}</p>
+      <p><strong>Altura:</strong> {{height}}</p>
+      <p><strong>Riego:</strong> {{water}}</p>
+      <p><strong>Atomizador:</strong> {{spray}}</p>
+      <p><strong>Luminosidad:</strong> {{ligth}}</p>
+      <p><strong>Ubicación de hogar:</strong> {{location}}</p>
+      {{#if petFriendly}}
+      <p>Es amigable para mascostas</p>
+      {{else}}
+      <p>No es amigable para mascostas</p>
+      {{/if}}
       <hr>
       <a href="/plantas/eliminar?id={{id}}" class="btn btn-sm btn-dark">Eliminar Planta</a>
 
-      <a href="/perfil/agregar-planta/{{id}}">Anadir a favorito</a>
+      <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm btn-dark">Anadir a favorito</a>
   
     </div>
   </div>
