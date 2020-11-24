@@ -47,9 +47,16 @@ router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']),(req, re
         .catch(err => next(new Error(err)))
 })
 
-router.get('/perfil/agregar-planta/:plant_id', (req, res, next) => {
+router.get('/perfil/agregar-planta/:plant_id', ensureAuthenticated, (req, res, next) => {
     User
         .findByIdAndUpdate(req.user._id, { $push: { plants: req.params.plant_id } }, { new: true })
+        .then(() => res.redirect('/perfil'))
+        .catch(err => next(new Error(err)))
+})
+
+router.get('/perfil/quitar-planta/:plant_id', (req, res, next) => {
+    User
+        .findByIdAndUpdate(req.user._id, { $pull: { plants: req.params.plant_id } }, { new: true })
         .then(() => res.redirect('/perfil'))
         .catch(err => next(new Error(err)))
 })

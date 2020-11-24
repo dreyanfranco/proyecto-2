@@ -1,15 +1,28 @@
 body {
-  font-family: sans-serif; }
+  font-family: 'Roboto Mono', monospace; }
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif; }
 
 #storesMap {
   background-color: red;
   height: 400px; }
 
 .navbar {
-  margin-bottom: 50px; }
+  background: #fff; }
 
 img {
   width: 100%; }
+
+main {
+  padding-top: 50px; }
+
+section.hero {
+  background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606214183/fotos-plantas/ovgtoxqzymu3lctzm5zk.jpg);
+  height: 100vh;
+  background-size: cover;
+  padding-top: 20%;
+  text-align: center; }
 
 .plant-task {
   margin-bottom: 30px; }

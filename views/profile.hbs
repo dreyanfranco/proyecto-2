@@ -3,7 +3,7 @@
     <h1>Estas en tu perfil {{username}}</h1>
     <p>Tu rol es {{role}}</p>
 
-        <a href="/editar-perfil?id={{_id}}" class="btn btn-sm btn-dark">Editar Perfil</a>
+    <a href="/editar-perfil?id={{_id}}" class="btn btn-sm btn-dark">Editar Perfil</a>
     <a href="/eliminar-perfil?id={{_id}}" class="btn btn-sm btn-dark">Eliminar Perfil</a>
     <h3>Estas son tus plantas:</h3>
 
@@ -23,6 +23,7 @@
         <li><strong>Pulverizar:</strong> {{spray}}</li>
     </ul>
 <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+ <a href="/perfil/quitar-planta/{{id}}" class="btn btn-sm btn-dark">Eliminar</a>
     </div>
  
     </div>
