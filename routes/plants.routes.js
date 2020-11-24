@@ -36,7 +36,6 @@ router.get('/eliminar', (req, res, next) => {
 })
   
 // Editar planta
-//Editar tienda
 router.get('/editar-planta', (req, res, next) => {
     const plantId = req.query.id
 
@@ -46,10 +45,13 @@ router.get('/editar-planta', (req, res, next) => {
         .catch(error => next(new Error(error)))
 })
 
-router.post('/editar-planta', (req, res, next) => {
+router.post('/editar-planta', CDNupload.single('imageUrl'),(req, res, next) => {
     const plantId = req.query.id
-
-    const { name, scientificName, imageUrl, description, climate, heigth, water, spray, care, ligth, location, petFriendly } = req.body
+    let imageUrl
+    if(req.file){
+    imageUrl= req.file.path
+    }
+    const { name, scientificName , description, climate, heigth, water, spray, care, ligth, location, petFriendly} = req.body
 
     Plant
         .findByIdAndUpdate(plantId, { name, scientificName, imageUrl, description, climate, heigth, water, spray, care, ligth, location, petFriendly }, { new: true })

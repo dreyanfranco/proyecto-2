@@ -4,6 +4,10 @@ const passport = require("passport");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
+const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, inicia sesión' });
+const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' });
+
+
 const User = require('../models/user.model');
 
 
@@ -33,11 +37,13 @@ router.get('/eliminar-perfil', (req, res, next) => {
         .catch(error => next(new Error(error)))
 })
 
-router.get('/perfil', (req, res, next) => {
+router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']),(req, res, next) => {
     User
         .findById(req.user._id)
         .populate('plants')
-        .then((theUser) => res.render('profile', theUser))
+        .then((theUser) => {
+            res.render('profile', theUser)
+        })
         .catch(err => next(new Error(err)))
 })
 

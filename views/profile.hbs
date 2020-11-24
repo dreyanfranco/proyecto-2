@@ -1,16 +1,32 @@
 <div class="container">
 
-    <a href="/editar-perfil?id={{user.id}}" class="btn btn-sm btn-dark">Editar Perfil</a>
-    <a href="/eliminar-perfil?id={{user.id}}" class="btn btn-sm btn-dark">Eliminar Perfil</a>
+    <h1>Estas en tu perfil {{username}}</h1>
+    <p>Tu rol es {{role}}</p>
 
-    <h1>Estas en tu perfil {{user.username}}</h1>
-    <p>Tu rol es {{user.role}}</p>
-    <h3>Estas son tus plantas</h3>
-    {{#with plants}}
-    <p>{{this.[0].name}}</p>
-    {{/with}}
+        <a href="/editar-perfil?id={{_id}}" class="btn btn-sm btn-dark">Editar Perfil</a>
+    <a href="/eliminar-perfil?id={{_id}}" class="btn btn-sm btn-dark">Eliminar Perfil</a>
+    <h3>Estas son tus plantas:</h3>
+
+    <div class="row justify-content-center">
+    {{#each plants}}
+    <div class="col-md-6">
+    <div class="row plant-task">
+    <div class="col-md-5">
+    <img src="{{imageUrl}}" alt="name">
+    </div>
+    <div class="col-md-7">
+    <h2>{{name}}</h2>
+    <p>Tipo: {{care}}</p>
+    <hr>
+    <ul>
+        <li><strong>Riego:</strong> {{water}}</li>
+        <li><strong>Pulverizar:</strong> {{spray}}</li>
+    </ul>
+<a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+    </div>
  
- 
-
-
+    </div>
+ </div>
+    {{/each}}
+</div>
 </div>

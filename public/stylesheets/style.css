@@ -11,4 +11,15 @@ body {
 img {
   width: 100%; }
 
+.plant-task {
+  margin-bottom: 30px; }
+
+.plant-task h2 {
+  font-weight: 100;
+  font-size: 1.5em; }
+
+.plant-task ul {
+  list-style: none;
+  padding-left: 0; }
+
 /*# sourceMappingURL=style.css.map */
