@@ -34,7 +34,7 @@ const plantsSchema = new mongoose.Schema({
         default: 'Desconocido',
         trim: true,
     },
-    heigth: {
+    height: {
         type: String,
         required: true,
         default: 'Desconocido',
@@ -43,17 +43,17 @@ const plantsSchema = new mongoose.Schema({
     },
     water: {
         type: String,
-        enum: ['eventualmente','una vez cada dos semanas','una vez a la semana','cada 2 días' , 'todos los días'],
+        enum: ['Eventualmente','Una vez cada dos semanas','Una vez a la semana','Cada 2 días' , 'Todos los días'],
         
     },
     spray: {
         type: String,
-        enum: ['una vez a la semana','cada 2 días' , 'todos los días', 'eventualmente', 'no pulverizar'],
+        enum: ['Una vez a la semana','Cada 2 días' , 'Todos los días', 'Eventualmente', 'No pulverizar'],
         
     },
     care: {
         type: String,
-        enum: ['casi inmortal','fácil de cuidar' , 'necesita cuidados'],
+        enum: ['Casi inmortal','Fácil de cuidar' , 'Necesita cuidados'],
         
     },
     ligth: {
