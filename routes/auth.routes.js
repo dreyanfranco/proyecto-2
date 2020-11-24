@@ -33,14 +33,20 @@ router.get('/eliminar-perfil', (req, res, next) => {
         .catch(error => next(new Error(error)))
 })
 
-router.get('/perfil/:user_id', (req, res, next) => {
-    // const userId = req.params.user_id
+router.get('/perfil', (req, res, next) => {
     User
-        .findById(req.params.user_id)
-        .then(theUser => res.render('profile', theUser))
+        .findById(req.user._id)
+        .populate('plants')
+        .then((theUser) => res.render('profile', theUser))
         .catch(err => next(new Error(err)))
 })
 
+router.get('/perfil/agregar-planta/:plant_id', (req, res, next) => {
+    User
+        .findByIdAndUpdate(req.user._id, { $push: { plants: req.params.plant_id } }, { new: true })
+        .then(() => res.redirect('/perfil'))
+        .catch(err => next(new Error(err)))
+})
 
 
 
@@ -76,7 +82,7 @@ router.post("/registro", (req, res, next) => {
 //Iniciar Sesión
 router.get("/iniciar-sesion", (req, res) => res.render("auth/login", { errorMsg: req.flash("error") }))
 router.post("/iniciar-sesion", passport.authenticate("local", {
-    successRedirect: "/perfil/",
+    successRedirect: "/perfil",
     failureRedirect: "/iniciar-sesion",
     failureFlash: true,
     passReqToCallback: true

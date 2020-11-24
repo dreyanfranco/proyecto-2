@@ -12,11 +12,9 @@
 
       <hr>
       <a href="/plantas/eliminar?id={{id}}" class="btn btn-sm btn-dark">Eliminar Planta</a>
-      {{#with user}}
-      <form action="/profile/{{user.id}}" method="POST">
-        <input type="submit" name="plants" id="" value="{{id}}" />
-      </form>
-      {{/with}}
+
+      <a href="/perfil/agregar-planta/{{id}}">Anadir a favorito</a>
+  
     </div>
   </div>
 </div>
