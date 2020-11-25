@@ -12,7 +12,9 @@
       <h4>{{name}}</h4>
       <p><strong>Cuidado: </strong> {{care}}</p>
       <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+      {{#if ../isAdmin}}
       <a href="/plantas/editar-planta?id={{id}}" class="btn btn-sm btn-dark">Editar planta</a>
+      {{/if}}
       <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm btn-dark">Añadir a mi Jungle</a>
 
       <hr>

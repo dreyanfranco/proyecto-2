@@ -1,19 +1,22 @@
 <div class="container">
     <h1>Nuestras tiendas:</h1>
+    {{#if isAdmin}}
     <a href="/tiendas/crear-tienda" class="btn btn-sm btn-dark">Añadir tienda</a>
+    {{/if}}
     <div class="row">
         {{#each stores}}
         <div class="col-md-4">
             <h3>{{name}}</h3>
             <p>{{direction}}</p>
+            {{#if ../isAdmin}}
             <a href="/tiendas/eliminar-tienda?id={{id}}" class="btn btn-sm btn-dark">Eliminar</a>
             <a href="/tiendas/editar-tienda?id={{id}}" class="btn btn-sm btn-dark">Editar</a>
+            {{/if}}
         </div>
         {{/each}}
     </div>
     <div>
         <figure id="storesMap"></figure>
-        <a href="/" class="btn btn-dark">Inicio</a>
     </div>
 </div>
 {{!-- Scripts estáticos --}}
