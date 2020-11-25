@@ -37,12 +37,12 @@ router.get('/eliminar-perfil', (req, res, next) => {
         .catch(error => next(new Error(error)))
 })
 
-router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']),(req, res, next) => {
+router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res, next) => {
     User
         .findById(req.user._id)
         .populate('plants')
         .then((theUser) => {
-            res.render('profile', theUser)
+            res.render('profile', { user: theUser, isAdmin: req.user.role.includes('ADMIN')})
         })
         .catch(err => next(new Error(err)))
 })

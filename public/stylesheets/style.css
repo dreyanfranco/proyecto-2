@@ -1,5 +1,6 @@
 body {
-  font-family: 'Roboto Mono', monospace; }
+  font-family: 'Roboto Mono', monospace;
+  color: #034f50; }
 
 h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif; }
@@ -8,14 +9,31 @@ h1, h2, h3, h4 {
   background-color: red;
   height: 400px; }
 
-.navbar {
-  background: #fff; }
-
 img {
   width: 100%; }
 
 main {
-  padding-top: 50px; }
+  padding-top: 70px; }
+
+.navbar {
+  background: #fff; }
+
+img.icon-user {
+  width: 23px;
+  height: 26px; }
+
+a.nav-link {
+  color: #034f50; }
+
+a.btn.btn-sm.btn-dark {
+  background-color: #034f50;
+  color: #94ffb6;
+  border-color: #94ffb6; }
+
+hr.short-strong {
+  border-top: 5px solid #94ffb6;
+  width: 20%;
+  margin: 10px 0 10px; }
 
 section.hero {
   background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606214183/fotos-plantas/ovgtoxqzymu3lctzm5zk.jpg);
