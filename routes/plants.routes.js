@@ -60,7 +60,9 @@ router.post('/editar-planta', CDNupload.single('imageUrl'),(req, res, next) => {
     if(req.file){
     imageUrl= req.file.path
     }
-    const { name, scientificName , description, climate, heigth, water, spray, care, ligth, location, petFriendly} = req.body
+    console.log(req.body)
+    const petFriendly = (req.body.petFriendly === "on") ?  true : false
+    const { name, scientificName , description, climate, heigth, water, spray, care, ligth, location} = req.body
 
     Plant
         .findByIdAndUpdate(plantId, { name, scientificName, imageUrl, description, climate, heigth, water, spray, care, ligth, location, petFriendly }, { new: true })

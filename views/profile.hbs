@@ -1,5 +1,4 @@
 <div class="container">
-
     <h1>Estas en tu perfil {{user.username}}</h1>
     <p>Tu rol es {{user.role}}</p>
     {{#if isAdmin}}
@@ -7,7 +6,6 @@
     <a href="/eliminar-perfil?id={{_id}}" class="btn btn-sm btn-dark">Eliminar Perfil</a>
     {{/if}}
     <h3>Estas son tus plantas:</h3>
-
     <div class="row justify-content-center">
         {{#each user.plants}}
         <div class="col-md-6">
@@ -26,7 +24,6 @@
                     <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
                     <a href="/perfil/quitar-planta/{{id}}" class="btn btn-sm btn-dark">Eliminar</a>
                 </div>
-
             </div>
         </div>
         {{/each}}
