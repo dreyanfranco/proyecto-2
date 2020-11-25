@@ -10,8 +10,6 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 
 const User = require('../models/user.model');
 
-
-
 router.get('/editar-perfil', (req, res, next) => {
     const userId = req.query.id
     User
