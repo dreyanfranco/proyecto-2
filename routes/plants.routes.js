@@ -7,17 +7,18 @@ const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next() :
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' });
 
 //Listado de plantas
-router.get('/', (req, res, next) => {
+router.get('/', (req, res, next) => { 
+    
     Plant
-        .find()
-        .then(allThePlants => {
+    .find()
+    .then(allThePlants => {
             if (req.user) {
                 res.render('plants/all-plants', { plants: allThePlants, isAdmin: req.user.role.includes('ADMIN') })
             } else {
                 res.render('plants/all-plants', { plants: allThePlants, isAdmin: false })
             }
         })
-        .catch(err => next(new Error(err)))
+    .catch(err => next(new Error(err)))
 })
 
 //Crear planta
