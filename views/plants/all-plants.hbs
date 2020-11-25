@@ -1,24 +1,23 @@
- <div class="container plants-index">
+<div class="container plants-index">
   <h1 style="font-weight: 100">Nuestras Plantas:</h1>
-
+  {{#if isAdmin}}
   <a href="/plantas/crear-planta" class="btn btn-sm btn-dark">Añadir plantas</a>
-<div class="row">
+  {{/if}}
+  <div class="row">
 
-  {{#each plants}}
-  <div class="col-md-4">
-  <figure>
-  <img src="{{imageUrl}}" alt="{{name}}">
-  </figure>
-  <h4>{{name}}</h4>
-  
-  <p><strong>Cuidado: </strong> {{care}}</p>
+    {{#each plants}}
+    <div class="col-md-4">
+      <figure>
+        <img src="{{imageUrl}}" alt="{{name}}">
+      </figure>
+      <h4>{{name}}</h4>
+
+      <p><strong>Cuidado: </strong> {{care}}</p>
       <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
       <a href="/plantas/editar-planta?id={{id}}" class="btn btn-sm btn-dark">Editar planta</a>
 
-  <hr>
+      <hr>
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
-
-
 </div>
