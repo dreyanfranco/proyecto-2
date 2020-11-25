@@ -20,6 +20,63 @@ router.get('/', (req, res, next) => {
         })
     .catch(err => next(new Error(err)))
 })
+//Filtrado plantas: casi inmortal
+router.get('/casi-inmortal', (req, res, next) => { 
+    const inmortal = { care: 'Casi inmortal' }
+    Plant
+    .find(inmortal)
+    .then(allThePlants => {
+            if (req.user) {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: req.user.role.includes('ADMIN') })
+            } else {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: false })
+            }
+        })
+    .catch(err => next(new Error(err)))
+})
+
+//Filtrado plantas: pet Friendly
+router.get('/amigable', (req, res, next) => { 
+    
+    Plant
+    .find({ petFriendly:true })
+    .then(allThePlants => {
+            if (req.user) {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: req.user.role.includes('ADMIN') })
+            } else {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: false })
+            }
+        })
+    .catch(err => next(new Error(err)))
+})
+//Filtrado plantas: fácil de cuidar
+router.get('/facil', (req, res, next) => { 
+    
+    Plant
+    .find({ care:'Fácil de cuidar' })
+    .then(allThePlants => {
+            if (req.user) {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: req.user.role.includes('ADMIN') })
+            } else {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: false })
+            }
+        })
+    .catch(err => next(new Error(err)))
+})
+//Filtrado plantas: poca luz
+router.get('/poca-luz', (req, res, next) => { 
+    
+    Plant
+    .find({ ligth:'Luminosidad con luz indirecta' })
+    .then(allThePlants => {
+            if (req.user) {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: req.user.role.includes('ADMIN') })
+            } else {
+                res.render('plants/all-plants', { plants: allThePlants, isAdmin: false })
+            }
+        })
+    .catch(err => next(new Error(err)))
+})
 
 //Crear planta
 router.get('/crear-planta', ensureAuthenticated, checkRole(['ADMIN']), (req, res, next) => { 
