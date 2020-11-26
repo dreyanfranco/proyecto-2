@@ -28,3 +28,16 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <h2>Dónde comprar {{name}}</h2>
+  <div class="row">
+    {{#each stores}}
+    <div class="col-md-4">
+      <h3>{{name}}</h3>
+      <p>{{direction}}</p>
+      <a href="/tiendas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver tienda</a>
+    </div>
+    {{/each}}
+  </div>
+</div>

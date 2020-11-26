@@ -16,7 +16,10 @@ img {
   width: 100%; }
 
 main {
-  padding-top: 70px; }
+  padding-top: 100px; }
+
+section {
+  padding: 50px 0; }
 
 .navbar {
   background: #fff; }
@@ -45,6 +48,23 @@ section.hero {
   padding-top: 20%;
   text-align: center; }
 
+.img-hero {
+  width: 300px;
+  margin: 0 auto; }
+
+.about-us-img {
+  height: 400px;
+  object-fit: cover; }
+
+.care-heading {
+  text-align: center; }
+
+.short-strong.center {
+  margin: 20px auto; }
+
+section.care {
+  background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606406050/fotos-plantas/bg-pattern_spvrb5.jpg); }
+
 .plant-task {
   margin-bottom: 30px; }
 
@@ -59,5 +79,22 @@ section.hero {
 .map-details {
   height: 400px;
   background-color: #94ffb6; }
+
+.filter-links {
+  text-align: center; }
+
+a.btn.btn-sm.btn-inverted {
+  background-color: #fff;
+  color: #034f50;
+  border-color: #94ffb6;
+  border-radius: 0;
+  padding: 10px;
+  border: solid 2px #034f50; }
+
+a.btn.btn-sm.btn-inverted:hover {
+  background-color: #94ffb6; }
+
+.filter-links a {
+  margin: 0 30px 30px 0; }
 
 /*# sourceMappingURL=style.css.map */

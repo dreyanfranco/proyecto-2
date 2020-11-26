@@ -2,9 +2,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1>{{title}}</h1>
-                <p>Welcome to {{title}}</p>
-                <a href="/plantas" class="btn btn-sm btn-dark">Ver Plantas</a>
+                <figure class="img-hero"><img
+                        src="https://res.cloudinary.com/drapkr7kb/image/upload/v1606405508/fotos-plantas/logo-sinclaim_afglhc.png"
+                        alt="jungle pot"></figure>
+                <h1>Manten tus plantas healthy</h1><a href="/plantas" class="btn btn-sm btn-dark">Ver Plantas</a>
             </div>
         </div>
     </div>
@@ -13,32 +14,37 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h2>Sobre Nosotros</h2>
+                <h2>Sobre nosotros</h2>
                 <hr class="short-strong">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, rem totam ad velit, culpa sed
-                    facilis suscipit pariatur repellat et alias possimus illum ex veniam adipisci omnis ab voluptates
-                    cum.</p>
+                <p>El comprar una planta no debería ser un impulso sin más. El integrar un ser vivo en casa es el acto
+                    amor más bonito que hay. Casi casi como el de ver crecer una planta.</p>
+                <p>Desde JunglePot te ayudamos a que todas tus plantas crezcan felices, regístrate para llevar un
+                    seguimiento de los cuidados de tus plantas.</p>
+                <a href="/registro" class="btn btn-sm btn-dark">Regístrate</a>
             </div>
             <div class="col-md-6">
-                <img src="https://cdn.thecolvinco.com/photos_cache_gallery/lara/lara-3ecab7c2-260e-424e-956f-3aa54f3a3f79.jpg"
-                    alt="plantas">
+                <img src="https://res.cloudinary.com/drapkr7kb/image/upload/v1606406666/fotos-plantas/WhatsApp_Image_2020-11-26_at_17.02.32_ybdqhr.jpg"
+                    alt="plantas" class="about-us-img">
             </div>
         </div>
     </div>
 </section>
-<section>
+<section class="care">
     <div class="container">
+        <div class="care-heading">
+            <h2>Plantas casi inmortales</h2>
+            <hr class="short-strong center">
+            <p>Estas son plantas fáciles de cuidar, plantas para principiantes. ¡Ya no es necesario que renuncies al verde en tu hogar!</p>
+        </div>
         <div class="row justify-content-center">
-            <h2>Plantas para principiantes</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis itaque quam molestias, ducimus expedita
-                facere alias tempora </p>
+
+
             {{#each plants}}
             <div class="col-md-4">
                 <figure>
                     <img src="{{imageUrl}}" alt="{{name}}">
                 </figure>
                 <h4>{{name}}</h4>
-                <p><strong>Cuidado: </strong> {{care}}</p>
                 <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
                 {{#if ../isAdmin}}
                 <a href="/plantas/editar-planta?id={{id}}" class="btn btn-sm btn-dark">Editar planta</a>
