@@ -1,7 +1,8 @@
+<section class="all-plants">
 <div class="container plants-index">
   <h2>Plantas que molan</h2>
   <hr class="short-strong">
-  <p>Trae la naturaleza al interior de tu casa y siente como mejora tu estado de ánimo. Las plantas tienen muchos beneficios para tu salud ya que purifican el aire, te conectan con la naturaleza e impulsan tu
+  <p class="intro">Trae la naturaleza al interior de tu casa y siente como mejora tu estado de ánimo. Las plantas tienen muchos beneficios para tu salud ya que purifican el aire, te conectan con la naturaleza e impulsan tu
   creatividad.</p>
   <div class="filter-links">
     <a href="/plantas" class="btn btn-sm btn-inverted">Todas las plantas</a>
@@ -10,7 +11,7 @@
     <a href="/plantas/facil" class="btn btn-sm btn-inverted">Fácil de cuidar</a>
     <a href="/plantas/facil" class="btn btn-sm btn-inverted">Poca luz</a>
   </div>
-
+  
   {{#if isAdmin}}
   <a href="/plantas/crear-planta" class="btn btn-sm btn-dark">Añadir plantas</a>
   {{/if}}
@@ -26,10 +27,11 @@
       {{#if ../isAdmin}}
       <a href="/plantas/editar-planta?id={{id}}" class="btn btn-sm btn-dark">Editar planta</a>
       {{/if}}
-      <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm btn-dark">Añadir a mi Jungle</a>
+      <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm fav">Añadir a mi Jungle <span>+</span></a>
 
       <hr>
     </div>
     {{/each}}
   </div>
 </div>
+</section>
