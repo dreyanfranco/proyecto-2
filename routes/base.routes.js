@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     Plant
         .find({ care: 'Casi inmortal' }, 'imageUrl name')
         .then(somePlants => res.render('index', {plants: somePlants}))
-        .catch(error => console.log(error))
+        .catch(err => next(new Error(err)))
 })
 
 

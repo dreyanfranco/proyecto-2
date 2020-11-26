@@ -1,13 +1,13 @@
 <div class="container">
-  <h3>{{name}}</h3>
-  <p>{{direction}}</p>
+  <h3>{{store.name}}</h3>
+  <p>{{store.direction}}</p>
   {{#if isAdmin}}
-  <a href="/tiendas/catalogo/{{id}}" class="btn btn-dark">catálogo</a>
+  <a href="/tiendas/catalogo/{{store.id}}" class="btn btn-dark">catálogo</a>
   {{/if}}
 </div>
 
 <div>
-  <figure storeID="{{id}}" class="map-details"></figure>
+  <figure storeID="{{store.id}}" class="map-details"></figure>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
