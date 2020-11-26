@@ -10,6 +10,12 @@
   <figure storeID="{{store.id}}" class="map-details"></figure>
 </div>
 
+<div>
+  {{#each store.plants}}
+    <h3>{{name}}</h3>
+  {{/each}}
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/javascripts/styles.js"></script>
 <script src="/javascripts/store-map-details.js"></script>
