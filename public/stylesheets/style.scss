@@ -1,24 +1,27 @@
-$base-color:#034f50;
-$light-color:#94ffb6;
+$base-color: #034f50;
+$light-color: #94ffb6;
 body {
-  font-family: 'Roboto Mono', monospace;
-  color:$base-color;
+  font-family: "Roboto Mono", monospace;
+  color: $base-color;
 }
-h1, h2, h3, h4{
-  font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
 }
-#storesMap{
-  background-color: red;
+#storesMap {
+  background-color: $light-color;
   height: 400px;
 }
 img {
   width: 100%;
 }
-main{
-  padding-top:70px;
+main {
+  padding-top: 70px;
 }
 //menu
-.navbar{
+.navbar {
   background: #fff;
 }
 img.icon-user {
@@ -26,13 +29,13 @@ img.icon-user {
   height: 26px;
 }
 a.nav-link {
-  color:$base-color;
+  color: $base-color;
 }
 //componentes
 a.btn.btn-sm.btn-dark {
   background-color: $base-color;
-  color:$light-color;
-  border-color:$light-color;
+  color: $light-color;
+  border-color: $light-color;
 }
 hr.short-strong {
   border-top: 5px solid $light-color;
@@ -44,7 +47,7 @@ section.hero {
   background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606214183/fotos-plantas/ovgtoxqzymu3lctzm5zk.jpg);
   height: 100vh;
   background-size: cover;
-  padding-top:20%;
+  padding-top: 20%;
   text-align: center;
 }
 //profile plants
@@ -58,4 +61,9 @@ section.hero {
 .plant-task ul {
   list-style: none;
   padding-left: 0;
+}
+// store details
+.map-details {
+  height: 400px;
+  background-color: $light-color;
 }

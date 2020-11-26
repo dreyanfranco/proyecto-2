@@ -1,4 +1,14 @@
 <div class="container">
   <h3>{{name}}</h3>
   <p>{{direction}}</p>
+  <a href="/tiendas/catalogo/{{id}}">catálogo</a>
 </div>
+
+<div>
+  <figure id="{{id}}" class="map-details"></figure>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/store-map-details.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{map}}&callback=initApp"></script>

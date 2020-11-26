@@ -6,7 +6,16 @@ const Store = require('../models/store.model');
 router.get('/tiendas', (req, res) => {
     Store
         .find()
-        .then(places => res.json(places))
+        .then(allStores => res.json(allStores))
+        .catch(err => next(err))
+})
+
+// mapa detalle tienda
+router.get('tiendas/detalle/:store_id', (req, res) => {
+    const storeId = req.params.store_id
+    Store
+        .findById(storeId)
+        .then(store => res.json(store))
         .catch(err => next(err))
 })
 

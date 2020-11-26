@@ -1,12 +1,15 @@
 body {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   color: #034f50; }
 
-h1, h2, h3, h4 {
-  font-family: 'Poppins', sans-serif; }
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif; }
 
 #storesMap {
-  background-color: red;
+  background-color: #94ffb6;
   height: 400px; }
 
 img {
@@ -52,5 +55,9 @@ section.hero {
 .plant-task ul {
   list-style: none;
   padding-left: 0; }
+
+.map-details {
+  height: 400px;
+  background-color: #94ffb6; }
 
 /*# sourceMappingURL=style.css.map */
