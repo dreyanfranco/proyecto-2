@@ -18,7 +18,7 @@ img {
   width: 100%;
 }
 main {
-  padding-top: 100px;
+  padding-top: 70px;
 }
 section {
   padding: 50px 0;
@@ -39,6 +39,8 @@ a.btn.btn-sm.btn-dark {
   background-color: $base-color;
   color: $light-color;
   border-color: $light-color;
+  border-radius: 0;
+  padding: 10px;
 }
 hr.short-strong {
   border-top: 5px solid $light-color;
@@ -54,8 +56,8 @@ section.hero {
   text-align: center;
 }
 .img-hero {
-    width: 300px;
-    margin: 0 auto;
+  width: 300px;
+  margin: 0 auto;
 }
 // about us section
 .about-us-img {
@@ -66,7 +68,7 @@ section.hero {
 .care-heading {
   text-align: center;
 }
-.short-strong.center{
+.short-strong.center {
   margin: 20px auto;
 }
 section.care {
@@ -90,8 +92,10 @@ section.care {
   background-color: $light-color;
 }
 
-//all plants
-//filter link
+// All plants
+p.intro {
+    margin: 30px 0;
+}
 .filter-links {
   text-align: center;
 }
@@ -106,7 +110,47 @@ a.btn.btn-sm.btn-inverted {
 a.btn.btn-sm.btn-inverted:hover {
   background-color: $light-color;
 }
-
-.filter-links a{
+.filter-links a {
   margin: 0 30px 30px 0;
+}
+a.btn.btn-sm.fav {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 15px;
+  border-radius: 0;
+  color:$base-color;
+  background-color: #94ffb663;
+  padding: 10px;
+  font-weight: 900;
+}
+a.btn.btn-sm.fav:hover {
+    color: $light-color;
+    background-color: $base-color;
+}
+// Plant details
+.details strong {
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 3px solid #94ffb6;
+}
+// Footer
+p.footer {
+  background-color: $base-color;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0;
+}
+// Responsive
+@media screen and (max-width: 780px) {
+  section.hero {
+    background-image: none;
+    background-color: #edfff3;
+    height: 400px;
+    padding-top: 10%;
+  }
+  h1 {
+    font-size: 1em;
+  }
 }

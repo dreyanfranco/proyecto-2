@@ -65,6 +65,21 @@ router.get('/perfil/agregar-planta/:plant_id', ensureAuthenticated, (req, res, n
     // .then(() => res.redirect('/perfil'))
     // .catch(err => next(new Error(err)))
 })
+// router.get('/perfil/agregar-planta/:plant_id', ensureAuthenticated, (req, res, next) => {
+//     User
+//         .findById(req.user._id)
+//         .then((theUser) => {
+//             if (theUser.plants.includes(req.params.plant_id)) {
+//                 res.redirect('/perfil')
+//             }
+//             else {
+//                 User
+//                 .findByIdAndUpdate(req.user._id, { $push: { plants: req.params.plant_id } }, { new: true })
+//             }
+//         })    
+//         .then(() => res.redirect('/perfil'))
+//         .catch(err => next(new Error(err)))
+// })
 
 // Remove plant from profile
 router.get('/perfil/quitar-planta/:plant_id', (req, res, next) => {
