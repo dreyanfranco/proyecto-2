@@ -8,7 +8,6 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 
 //Listado de plantas
 router.get('/', (req, res, next) => { 
-    
     Plant
     .find()
     .then(allThePlants => {
@@ -136,7 +135,7 @@ router.get('/detalle/:plant_id', (req, res) => {
 
     Plant
         .findById(plantId)
-        
+        .populate('stores')
         .then(thePlant => res.render('plants/plant-details', thePlant))
         .catch(err => console.log(err))
 })

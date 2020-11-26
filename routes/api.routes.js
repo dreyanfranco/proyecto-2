@@ -3,7 +3,7 @@ const router = express.Router()
 const Store = require('../models/store.model');
 
 // Endpoints
-router.get('/tiendas', (req, res) => {
+router.get('/tiendas', (req, res, next) => {
     Store
         .find()
         .then(allStores => res.json(allStores))
@@ -11,7 +11,7 @@ router.get('/tiendas', (req, res) => {
 })
 
 // mapa detalle tienda
-router.get('tiendas/detalle/:store_id', (req, res) => {
+router.get('/tiendas/detalle/:store_id', (req, res, next) => {
     const storeId = req.params.store_id
     Store
         .findById(storeId)

@@ -18,7 +18,10 @@ img {
   width: 100%;
 }
 main {
-  padding-top: 70px;
+  padding-top: 100px;
+}
+section {
+  padding: 50px 0;
 }
 //menu
 .navbar {
@@ -50,6 +53,25 @@ section.hero {
   padding-top: 20%;
   text-align: center;
 }
+.img-hero {
+    width: 300px;
+    margin: 0 auto;
+}
+// about us section
+.about-us-img {
+  height: 400px;
+  object-fit: cover;
+}
+//care section
+.care-heading {
+  text-align: center;
+}
+.short-strong.center{
+  margin: 20px auto;
+}
+section.care {
+  background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606406050/fotos-plantas/bg-pattern_spvrb5.jpg);
+}
 //profile plants
 .plant-task {
   margin-bottom: 30px;
@@ -66,4 +88,25 @@ section.hero {
 .map-details {
   height: 400px;
   background-color: $light-color;
+}
+
+//all plants
+//filter link
+.filter-links {
+  text-align: center;
+}
+a.btn.btn-sm.btn-inverted {
+  background-color: #fff;
+  color: $base-color;
+  border-color: $light-color;
+  border-radius: 0;
+  padding: 10px;
+  border: solid 2px $base-color;
+}
+a.btn.btn-sm.btn-inverted:hover {
+  background-color: $light-color;
+}
+
+.filter-links a{
+  margin: 0 30px 30px 0;
 }
