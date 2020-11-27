@@ -1,25 +1,26 @@
-<div class="container">
-    {{#if isAdmin}}
-    <a href="/tiendas/crear-tienda" class="btn btn-sm btn-dark">Añadir tienda</a>
-    {{/if}}
-    <div class="row">
-        {{#each stores}}
-        <div class="col-md-4">
-            <h3>{{name}}</h3>
-            <p>{{direction}}</p>
-            <a href="/tiendas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver tienda</a>
-            {{#if ../isAdmin}}
-            <a href="/tiendas/eliminar-tienda?id={{id}}" class="btn btn-sm btn-dark">Eliminar</a>
-            <a href="/tiendas/editar-tienda?id={{id}}" class="btn btn-sm btn-dark">Editar</a>
-            {{/if}}
+<section class="stores">
+    <div class="container">
+        {{#if isAdmin}}
+        <a href="/tiendas/crear-tienda" class="btn btn-sm btn-dark">Añadir tienda</a>
+        {{/if}}
+        <div class="row">
+            {{#each stores}}
+            <div class="col-md-4">
+                <h3>{{name}}</h3>
+                <p>{{direction}}</p>
+                <a href="/tiendas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver tienda</a>
+                {{#if ../isAdmin}}
+                <a href="/tiendas/eliminar-tienda?id={{id}}" class="btn btn-sm btn-admin">Eliminar</a>
+                <a href="/tiendas/editar-tienda?id={{id}}" class="btn btn-sm btn-admin">Editar</a>
+                {{/if}}
+            </div>
+            {{/each}}
         </div>
-        {{/each}}
+        <div>
+            <figure id="storesMap"></figure>
+        </div>
     </div>
-    <div>
-        <figure id="storesMap"></figure>
-    </div>
-</div>
-
+</section>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/javascripts/styles.js"></script>
 <script src="/javascripts/stores-map.js"></script>

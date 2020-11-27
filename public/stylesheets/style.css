@@ -1,6 +1,8 @@
 body {
   font-family: "Roboto Mono", monospace;
-  color: #034f50; }
+  color: #034f50;
+  position: relative;
+  height: 100%; }
 
 h1,
 h2,
@@ -16,7 +18,8 @@ img {
   width: 100%; }
 
 main {
-  padding-top: 70px; }
+  padding-top: 70px;
+  height: 100%; }
 
 section {
   padding: 50px 0; }
@@ -65,18 +68,29 @@ section.hero {
   margin: 20px auto; }
 
 section.care {
-  background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606406050/fotos-plantas/bg-pattern_spvrb5.jpg); }
+  background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606406050/fotos-plantas/bg-pattern_spvrb5.jpg);
+  background-size: cover; }
+
+h3.profile {
+  margin-bottom: 50px; }
+
+section.task {
+  padding-top: 0; }
 
 .plant-task {
   margin-bottom: 30px; }
 
 .plant-task h2 {
-  font-weight: 100;
   font-size: 1.5em; }
 
 .plant-task ul {
   list-style: none;
   padding-left: 0; }
+
+.plant-task strong {
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 3px solid #94ffb6; }
 
 .map-details {
   height: 400px;
@@ -117,10 +131,41 @@ a.btn.btn-sm.fav:hover {
   color: #94ffb6;
   background-color: #034f50; }
 
+a.btn.btn-sm.btn-admin.btn-block {
+  margin-top: 10px; }
+
 .details strong {
   font-weight: 700;
   text-transform: uppercase;
   border-bottom: 3px solid #94ffb6; }
+
+section.plants-stores {
+  background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606406050/fotos-plantas/bg-pattern_spvrb5.jpg);
+  background-size: cover; }
+
+.plants-stores .col-md-4 {
+  border-right: 1px solid;
+  margin-top: 20px; }
+
+section.stores .col-md-4 {
+  border-right: 1px solid;
+  margin: 30px 0; }
+
+.store .col-md-4 {
+  margin-bottom: 20px; }
+
+section.login {
+  height: 100vh; }
+
+section.signup {
+  height: 100vh; }
+
+a.btn.btn-sm.btn-admin {
+  background-color: #adb5bd;
+  color: #212529;
+  border-color: #94ffb600;
+  border-radius: 0;
+  padding: 10px; }
 
 p.footer {
   background-color: #034f50;
@@ -135,7 +180,7 @@ p.footer {
     background-color: #edfff3;
     height: 400px;
     padding-top: 10%; }
-  h1 {
-    font-size: 1em; } }
+    section.hero h1 {
+      font-size: 1em; } }
 
 /*# sourceMappingURL=style.css.map */

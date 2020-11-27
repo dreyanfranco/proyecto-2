@@ -7,7 +7,8 @@
     <p><strong>Cuidado: </strong> {{care}}</p>
     <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
     {{#if ../isAdmin}}
-    <a href="/plantas/editar-planta?id={{id}}" class="btn btn-sm btn-dark">Editar planta</a>
+    <a href="/plantas/editar-planta?id={{id}}" class="btn btn-sm btn-admin">Editar planta</a>
+    <a href="/plantas/eliminar?id={{id}}" class="btn btn-sm btn-admin btn-block">Eliminar Planta</a>
     {{/if}}
     <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm fav">Añadir a mi Jungle <span>+</span></a>
 

@@ -1,5 +1,24 @@
-{{#each plants}}
-<p>{{name}}</p>
-<a href="/tiendas/agregar-planta/{{../storeId}}/{{id}}" class="btn btn-sm btn-dark">Añadir a tienda</a>
+<section class="list">
+    <div class="container">
+        <div class="row">
+            {{#each plants}}
+            <div class="col-md-6">
+                <div class="row plant-task">
+                    <div class="col-md-5">
+                        <img src="{{imageUrl}}" alt="name">
+                    </div>
+                    <div class="col-md-7">
+                        <h2>{{name}}</h2>
+                        <p>Tipo: {{care}}</p>
+                        <hr>
 
-{{/each}}
+                        <a href="/tiendas/agregar-planta/{{../storeId}}/{{id}}" class="btn btn-sm btn-dark">Añadir a
+                            tienda</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+</section>

@@ -1,49 +1,44 @@
 <section class="plant-details">
-<div class="container">
-  <h2>{{name}}</h2>
-  <p><small><strong><i>{{scientificName}}</i></strong></small></p>
-  <hr>
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-           
-      <img src="{{imageUrl}}" alt="{{name}}">
-    </div>
-    <div class="col-md-7 details">
-
-      <p><strong>Cuidado: </strong> {{care}}</p>
-      <p><strong>Descripción:</strong> {{description}}</p>
-      <p><strong>Clima:</strong> {{climate}}</p>
-      <p><strong>Tamaño:</strong> {{height}}</p>
-      <p><strong>Riego:</strong> {{water}}</p>
-      <p><strong>Atomizador:</strong> {{spray}}</p>
-      <p><strong>Luminosidad:</strong> {{ligth}}</p>
-      <p><strong>Ubicación de hogar:</strong> {{location}}</p>
-      {{#if petFriendly}}
-      <p>Es amigable para mascostas</p>
-      {{else}}
-      <p>No es amigable para mascostas</p>
-      {{/if}}
-      <hr>
-      <a href="/plantas/eliminar?id={{id}}" class="btn btn-sm btn-dark">Eliminar Planta</a>
-
-      <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm btn-dark">Añadir a mi Jungle</a>
-
+  <div class="container">
+    <h2>{{name}}</h2>
+    <p><small><strong><i>{{scientificName}}</i></strong></small></p>
+    <hr>
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <img src="{{imageUrl}}" alt="{{name}}">
+      </div>
+      <div class="col-md-7 details">
+        <p><strong>Cuidado: </strong> {{care}}</p>
+        <p><strong>Descripción:</strong> {{description}}</p>
+        <p><strong>Clima:</strong> {{climate}}</p>
+        <p><strong>Tamaño:</strong> {{height}}</p>
+        <p><strong>Riego:</strong> {{water}}</p>
+        <p><strong>Atomizador:</strong> {{spray}}</p>
+        <p><strong>Luminosidad:</strong> {{ligth}}</p>
+        <p><strong>Ubicación de hogar:</strong> {{location}}</p>
+        {{#if petFriendly}}
+        <p>Es amigable para mascostas</p>
+        {{else}}
+        <p>No es amigable para mascostas</p>
+        {{/if}}
+        <hr>
+        <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm btn-dark">Añadir a mi Jungle</a>
+      </div>
     </div>
   </div>
-</div>
 </section>
 <section class="plants-stores">
-<div class="container">
-  <h2>Dónde comprar {{name}}</h2>
-  <hr class="short-strong">
-  <div class="row">
-    {{#each stores}}
-    <div class="col-md-4">
-      <h4>{{name}}</h4>
-      <p>{{direction}}</p>
-      <a href="/tiendas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver tienda</a>
+  <div class="container">
+    <h2>Dónde comprar {{name}}</h2>
+    <hr class="short-strong">
+    <div class="row align-items-stretch">
+      {{#each stores}}
+      <div class="col-md-4">
+        <h4>{{name}}</h4>
+        <p>{{direction}}</p>
+        <a href="/tiendas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver tienda</a>
+      </div>
+      {{/each}}
     </div>
-    {{/each}}
   </div>
-</div>
 </section>

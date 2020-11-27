@@ -2,6 +2,10 @@
 <div class="container plants-index">
   <h2>Plantas que molan</h2>
   <hr class="short-strong">
+  {{#if isAdmin}}
+  <a href="/plantas/crear-planta" class="btn btn-sm btn-admin">Añadir plantas</a>
+  
+  {{/if}}
   <p class="intro">Trae la naturaleza al interior de tu casa y siente como mejora tu estado de ánimo. Las plantas tienen muchos beneficios para tu salud ya que purifican el aire, te conectan con la naturaleza e impulsan tu
   creatividad.</p>
   <div class="filter-links">
@@ -12,9 +16,7 @@
     <a href="/plantas/facil" class="btn btn-sm btn-inverted">Poca luz</a>
   </div>
   
-  {{#if isAdmin}}
-  <a href="/plantas/crear-planta" class="btn btn-sm btn-dark">Añadir plantas</a>
-  {{/if}}
+ 
   <div class="row">
     {{>plantsInfo this}}
   

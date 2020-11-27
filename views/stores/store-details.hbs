@@ -1,20 +1,29 @@
-<div class="container">
-  <h3>{{store.name}}</h3>
-  <p>{{store.direction}}</p>
-  {{#if isAdmin}}
-  <a href="/tiendas/catalogo/{{store.id}}" class="btn btn-dark">catálogo</a>
-  {{/if}}
-</div>
-
-<div>
-  <figure storeID="{{store.id}}" class="map-details"></figure>
-</div>
-
-<div>
-  {{#each store.plants}}
-    <h3>{{name}}</h3>
-  {{/each}}
-</div>
+<section class="store">
+  <div class="container">
+    <h3>{{store.name}}</h3>
+    <p>{{store.direction}}</p>
+    {{#if isAdmin}}
+    <a href="/tiendas/catalogo/{{store.id}}" class="btn btn-sm btn-admin">catálogo</a>
+    {{/if}}
+  </div>
+  <div class="container">
+    <div class="row">
+      {{#each store.plants}}
+      <div class="col-md-4">
+        <img src="{{imageUrl}}" alt="{{name}}">
+        <h3>{{name}}</h3>
+        <a href="/plantas/detalle/{{id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+        <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm fav">Añadir a mi Jungle <span>+</span></a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+<section class="map">
+  <div>
+    <figure storeID="{{store.id}}" class="map-details"></figure>
+  </div>
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/javascripts/styles.js"></script>
