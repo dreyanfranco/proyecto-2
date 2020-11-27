@@ -1,106 +1,111 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
-            <h1>Editar {{name}}:</h1>
+                <h1>Editar {{name}}:</h1>
 
-            <form action="/plantas/editar-planta?id={{id}}" method="POST" enctype="multipart/form-data">
-                <div class='form-group'>
-                    <label for='name'>Nombre:</label>
-                    <input name='name' type='text' class='form-control' id='name' value="{{name}}">
-                </div>
-                <div class='form-group'>
-                    <label for='scientificName'>Nombre científico:</label>
-                    <input name='scientificName' type='text' class='form-control' id='scientificName' value="{{scientificName}}">
-                </div>
-                <div class='form-group'>
-                     <label for='imageUrl'>Imagen:</label>
+                <form action="/plantas/editar-planta?id={{id}}" method="POST" enctype="multipart/form-data">
+                    <div class='form-group'>
+                        <label for='name'>Nombre:</label>
+                        <input name='name' type='text' class='form-control' id='name' value="{{name}}">
+                    </div>
+                    <div class='form-group'>
+                        <label for='scientificName'>Nombre científico:</label>
+                        <input name='scientificName' type='text' class='form-control' id='scientificName'
+                            value="{{scientificName}}">
+                    </div>
+                    <div class='form-group'>
+                        <label for='imageUrl'>Imagen:</label>
                         <input name='imageUrl' type='file' class='form-control' id='imageUrl'>
-                </div>
-                <div class='form-group'>
-                    <label for='description'>Descripción:</label>
-                    <textarea class="form-control" id="description" name="description" rows="3" >{{description}} </textarea>
-                </div>
-                <div class='form-group'>
-                    <label for='climate'>Clima:</label>
-                    <input name='climate' type='text' class='form-control' id='climate' value="{{climate}}">
-                </div>
-                <div class='form-group'>
-                    <label for='height'>Tamaño:</label>
-                    <input name='height' type='text' class='form-control' id='heigth' value="{{height}}">
-                </div>
-                <div class="form-group">
-                    <label for="water">Riego:</label>
-                    <select name="water" class="form-control" id="water">
-                        <option value="{{water}}">{{water}}</option>
+                    </div>
+                    <div class='form-group'>
+                        <label for='description'>Descripción:</label>
+                        <textarea class="form-control" id="description" name="description"
+                            rows="3">{{description}} </textarea>
+                    </div>
+                    <div class='form-group'>
+                        <label for='climate'>Clima:</label>
+                        <input name='climate' type='text' class='form-control' id='climate' value="{{climate}}">
+                    </div>
+                    <div class='form-group'>
+                        <label for='height'>Tamaño:</label>
+                        <input name='height' type='text' class='form-control' id='heigth' value="{{height}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="water">Riego:</label>
+                        <select name="water" class="form-control" id="water">
+                            <option value="{{water}}">{{water}}</option>
 
-                        <option value="eventualmente">Eventualmente</option>
-                        <option value="una vez cada dos semanas">Una vez cada dos semanas</option>
-                        <option value="una vez a la semana">Una vez a la semana</option>
-                        <option value="cada 2 días">Cada 2 días</option>
-                        <option value="todos los días">Todos los días</option>
+                            <option value="eventualmente">Eventualmente</option>
+                            <option value="una vez cada dos semanas">Una vez cada dos semanas</option>
+                            <option value="una vez a la semana">Una vez a la semana</option>
+                            <option value="cada 2 días">Cada 2 días</option>
+                            <option value="todos los días">Todos los días</option>
 
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="spray">Pulverizar:</label>
-                    <select name="spray" class="form-control" id="spray">
-                        <option value="{{spray}}">{{spray}}</option>
-                        <option value="no pulverizar">No pulverizar</option>
-                        <option value="eventualmente">Eventualmente</option>
-                        <option value="una vez a la semana">Una vez a la semana</option>
-                        <option value="cada 2 días">Cada 2 días</option>
-                        <option value="todos los días">Todos los días</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="care">Cuidado:</label>
-                    <select name="care" class="form-control" id="care">
-                        <option value="{{care}}">{{care}}</option>
-                        <option value="casi inmortal">Casi inmortal</option>
-                        <option value="fácil de cuidar">Fácil de cuidar</option>
-                        <option value="necesita cuidados">Necesita cuidados</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="ligth">Luz:</label>
-                    <select name="ligth" class="form-control" id="ligth">
-                        <option value="{{ligth}}">{{ligth}}</option>
-                        <option value="Luminosidad con luz indirecta">Luminosidad con luz indirecta</option>
-                        <option value="Luz indirecta">Luz indirecta</option>
-                        <option value="Necesita de espacios luminosos sin incidencia directa del sol">Necesita de
-                            espacios luminosos sin incidencia directa del sol</option>
-                        <option value="Espacios sombríos">Espacios sombríos</option>
-                        <option value="Espacios luminosos sin sol directo">Espacios luminosos sin sol directo</option>
-                        <option value="Espacios luminosos sin sol directo">Espacios poco luminosos</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="location">Ubicación:</label>
-                    <select name="location" class="form-control" id="location">
-                        <option value="{{location}}">{{location}}</option>
-                        <option value="Es una planta de interior">Es una planta de interior</option>
-                        <option value="Es una planta de exterior">Es una planta de exterior</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="petFriendly">Amigable para mascotas:</label>
-                    {{#if petFriendly}}
-                    <input type="checkbox" name="petFriendly" id="petFriendly" checked>
-                   {{else}}
-                   <input type="checkbox" name="petFriendly" id="petFriendly">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="spray">Pulverizar:</label>
+                        <select name="spray" class="form-control" id="spray">
+                            <option value="{{spray}}">{{spray}}</option>
+                            <option value="no pulverizar">No pulverizar</option>
+                            <option value="eventualmente">Eventualmente</option>
+                            <option value="una vez a la semana">Una vez a la semana</option>
+                            <option value="cada 2 días">Cada 2 días</option>
+                            <option value="todos los días">Todos los días</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="care">Cuidado:</label>
+                        <select name="care" class="form-control" id="care">
+                            <option value="{{care}}">{{care}}</option>
+                            <option value="casi inmortal">Casi inmortal</option>
+                            <option value="fácil de cuidar">Fácil de cuidar</option>
+                            <option value="necesita cuidados">Necesita cuidados</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ligth">Luz:</label>
+                        <select name="ligth" class="form-control" id="ligth">
+                            <option value="{{ligth}}">{{ligth}}</option>
+                            <option value="Luminosidad con luz indirecta">Luminosidad con luz indirecta</option>
+                            <option value="Luz indirecta">Luz indirecta</option>
+                            <option value="Necesita de espacios luminosos sin incidencia directa del sol">Necesita de
+                                espacios luminosos sin incidencia directa del sol</option>
+                            <option value="Espacios sombríos">Espacios sombríos</option>
+                            <option value="Espacios luminosos sin sol directo">Espacios luminosos sin sol directo
+                            </option>
+                            <option value="Espacios luminosos sin sol directo">Espacios poco luminosos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Ubicación:</label>
+                        <select name="location" class="form-control" id="location">
+                            <option value="{{location}}">{{location}}</option>
+                            <option value="Es una planta de interior">Es una planta de interior</option>
+                            <option value="Es una planta de exterior">Es una planta de exterior</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="petFriendly">Amigable para mascotas:</label>
+                        {{#if petFriendly}}
+                        <input type="checkbox" name="petFriendly" id="petFriendly" checked>
+                        {{else}}
+                        <input type="checkbox" name="petFriendly" id="petFriendly">
+                        {{/if}}
+
+                    </div>
+
+
+                    <button type='submit' class='btn btn-dark btn-block'>Enviar</button>
+                    {{#if errorMsg}}
+                    <p style="margin-top: 10px;background: red; color: white; text-align: center; padding: 10px">
+                        {{errorMsg}}</p>
                     {{/if}}
+                </form>
 
-                </div>
-
-
-                <button type='submit' class='btn btn-dark btn-block'>Enviar</button>
-                {{#if errorMsg}}
-                <p style="margin-top: 10px;background: red; color: white; text-align: center; padding: 10px">
-                    {{errorMsg}}</p>
-                {{/if}}
-            </form>
-
+            </div>
         </div>
     </div>
-</div>
+</section>

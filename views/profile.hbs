@@ -5,8 +5,8 @@
 
         {{#if isAdmin}}
         <p>Tu rol es {{user.role}}</p>
-        <a href="/editar-perfil?id={{_id}}" class="btn btn-sm btn-admin">Editar Perfil</a>
-        <a href="/eliminar-perfil?id={{_id}}" class="btn btn-sm btn-admin">Eliminar Perfil</a>
+        <a href="/editar-perfil?id={{user._id}}" class="btn btn-sm btn-admin">Editar Perfil</a>
+        <a href="/eliminar-perfil?id={{user._id}}" class="btn btn-sm btn-admin">Eliminar Perfil</a>
         {{/if}}
     </div>
 </section>
