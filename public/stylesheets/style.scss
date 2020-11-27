@@ -21,7 +21,7 @@ img {
 }
 main {
   padding-top: 70px;
-  height: 100%;
+  min-height: 100vh;
 }
 section {
   padding: 50px 0;
@@ -44,6 +44,12 @@ a.btn.btn-sm.btn-dark {
   border-color: $light-color;
   border-radius: 0;
   padding: 10px;
+  transition: all 0.5s;
+}
+a.btn.btn-sm.btn-dark:hover {
+  background-color: $light-color;
+  color: $base-color;
+  border-color: $base-color;
 }
 hr.short-strong {
   border-top: 5px solid $light-color;
@@ -67,6 +73,7 @@ section.hero {
   height: 400px;
   object-fit: cover;
 }
+
 //care section
 .care-heading {
   text-align: center;
@@ -80,16 +87,15 @@ section.care {
 }
 //profile plants
 h3.profile {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 section.task {
-    padding-top: 0;
+  padding-top: 0;
 }
 .plant-task {
   margin-bottom: 30px;
 }
 .plant-task h2 {
-  
   font-size: 1.5em;
 }
 .plant-task ul {
@@ -97,9 +103,9 @@ section.task {
   padding-left: 0;
 }
 .plant-task strong {
-    font-weight: 700;
-    text-transform: uppercase;
-    border-bottom: 3px solid #94ffb6;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 3px solid #94ffb6;
 }
 // store details
 .map-details {
@@ -109,7 +115,7 @@ section.task {
 
 // All plants
 p.intro {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 .filter-links {
   text-align: center;
@@ -134,53 +140,60 @@ a.btn.btn-sm.fav {
   top: 0;
   right: 15px;
   border-radius: 0;
-  color:$base-color;
+  color: $base-color;
   background-color: #94ffb663;
   padding: 10px;
   font-weight: 900;
+  transition: all 0.5s;
 }
 a.btn.btn-sm.fav:hover {
-    color: $light-color;
-    background-color: $base-color;
+  color: $light-color;
+  background-color: $base-color;
 }
 a.btn.btn-sm.btn-admin.btn-block {
-    margin-top: 10px;
+  margin: 10px 0;
 }
 // Plant details
 .details strong {
-    font-weight: 700;
-    text-transform: uppercase;
-    border-bottom: 3px solid #94ffb6;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 3px solid #94ffb6;
 }
 section.plants-stores {
-    background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606406050/fotos-plantas/bg-pattern_spvrb5.jpg);
-    background-size: cover;
+  background-image: url(https://res.cloudinary.com/drapkr7kb/image/upload/v1606406050/fotos-plantas/bg-pattern_spvrb5.jpg);
+  background-size: cover;
 }
 .plants-stores .col-md-4 {
-    border-right: 1px solid;
-    margin-top:20px;
+  border-right: 1px solid;
+  margin-top: 20px;
 }
 // Stores
 section.stores .col-md-4 {
-    border-right: 1px solid;
-    margin: 30px 0;
+  border-right: 1px solid;
+  margin: 30px 0;
 }
 .store .col-md-4 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 // Login
 section.login {
-    height: 100vh;
+  height: 100vh;
 }
 section.signup {
-    height: 100vh;
+  height: 100vh;
 }
 a.btn.btn-sm.btn-admin {
-    background-color: #adb5bd;
-    color: #212529;
-    border-color: #94ffb600;
-    border-radius: 0;
-    padding: 10px;
+  background-color: #adb5bd;
+  color: #212529;
+  border-color:#212529;
+  border-radius: 0;
+  padding: 10px;
+  transition: all 0.5s;
+}
+a.btn.btn-sm.btn-admin:hover {
+  background-color: #212529;
+  color:#adb5bd;
+  border-color: #adb5bd;
 }
 
 // Footer
@@ -199,9 +212,9 @@ p.footer {
     background-color: #edfff3;
     height: 400px;
     padding-top: 10%;
-  
-  h1 {
-    font-size: 1em;
+
+    h1 {
+      font-size: 1em;
+    }
   }
-}
 }

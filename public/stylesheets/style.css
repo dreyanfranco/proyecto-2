@@ -19,7 +19,7 @@ img {
 
 main {
   padding-top: 70px;
-  height: 100%; }
+  min-height: 100vh; }
 
 section {
   padding: 50px 0; }
@@ -39,7 +39,13 @@ a.btn.btn-sm.btn-dark {
   color: #94ffb6;
   border-color: #94ffb6;
   border-radius: 0;
-  padding: 10px; }
+  padding: 10px;
+  transition: all 0.5s; }
+
+a.btn.btn-sm.btn-dark:hover {
+  background-color: #94ffb6;
+  color: #034f50;
+  border-color: #034f50; }
 
 hr.short-strong {
   border-top: 5px solid #94ffb6;
@@ -125,14 +131,15 @@ a.btn.btn-sm.fav {
   color: #034f50;
   background-color: #94ffb663;
   padding: 10px;
-  font-weight: 900; }
+  font-weight: 900;
+  transition: all 0.5s; }
 
 a.btn.btn-sm.fav:hover {
   color: #94ffb6;
   background-color: #034f50; }
 
 a.btn.btn-sm.btn-admin.btn-block {
-  margin-top: 10px; }
+  margin: 10px 0; }
 
 .details strong {
   font-weight: 700;
@@ -163,9 +170,15 @@ section.signup {
 a.btn.btn-sm.btn-admin {
   background-color: #adb5bd;
   color: #212529;
-  border-color: #94ffb600;
+  border-color: #212529;
   border-radius: 0;
-  padding: 10px; }
+  padding: 10px;
+  transition: all 0.5s; }
+
+a.btn.btn-sm.btn-admin:hover {
+  background-color: #212529;
+  color: #adb5bd;
+  border-color: #adb5bd; }
 
 p.footer {
   background-color: #034f50;

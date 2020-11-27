@@ -3,7 +3,8 @@
     <h3>{{store.name}}</h3>
     <p>{{store.direction}}</p>
     {{#if isAdmin}}
-    <a href="/tiendas/catalogo/{{store.id}}" class="btn btn-sm btn-admin">catálogo</a>
+    <a href="/tiendas/catalogo/{{store.id}}" class="btn btn-sm btn-admin">Catálogo</a>
+    <br>
     {{/if}}
   </div>
   <div class="container">
@@ -20,7 +21,7 @@
   </div>
 </section>
 <section class="map">
-  <div>
+  <div class="container">
     <figure storeID="{{store.id}}" class="map-details"></figure>
   </div>
 </section>

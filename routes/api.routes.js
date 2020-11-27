@@ -10,7 +10,7 @@ router.get('/tiendas', (req, res, next) => {
         .catch(err => next(err))
 })
 
-// mapa detalle tienda
+// Map details store
 router.get('/tiendas/detalle/:store_id', (req, res, next) => {
     const storeId = req.params.store_id
     Store

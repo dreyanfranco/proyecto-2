@@ -70,8 +70,9 @@ router.get('/perfil/quitar-planta/:plant_id', (req, res, next) => {
         .catch(err => next(new Error(err)))
 })
 
-//Registro
+// Signup
 router.get("/registro", (req, res) => res.render("auth/signup"));
+
 router.post("/registro", (req, res, next) => {
     const { name, username, password, role } = req.body
     if (username === "" || password === "") {
@@ -103,8 +104,9 @@ router.post("/registro", (req, res, next) => {
         .catch(error => next(error))
 })
 
-// Log in
+// Login
 router.get("/iniciar-sesion", (req, res) => res.render("auth/login", { errorMsg: req.flash("error") }))
+
 router.post("/iniciar-sesion", passport.authenticate("local", {
     successRedirect: "/perfil",
     failureRedirect: "/iniciar-sesion",
@@ -112,7 +114,7 @@ router.post("/iniciar-sesion", passport.authenticate("local", {
     passReqToCallback: true
 }))
 
-// Sign up
+// Logout
 router.get('/cerrar-sesion', (req, res) => {
     req.logout()
     res.redirect("/iniciar-sesion")

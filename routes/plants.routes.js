@@ -8,7 +8,6 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 
 // Plants list 
 router.get('/', (req, res, next) => {
-
     Plant
         .find({}, 'imageUrl name care')
         .then(allThePlants => {
@@ -20,10 +19,10 @@ router.get('/', (req, res, next) => {
         })
         .catch(err => next(new Error(err)))
 })
+
 // Plant filter: inmortal
 router.get('/casi-inmortal', (req, res, next) => {
     const inmortal = { care: 'Casi inmortal' }
-
     Plant
         .find(inmortal)
         .then(allThePlants => {
@@ -38,7 +37,6 @@ router.get('/casi-inmortal', (req, res, next) => {
 
 // Plant filter: pet Friendly
 router.get('/amigable', (req, res, next) => {
-
     Plant
         .find({ petFriendly: true })
         .then(allThePlants => {
@@ -50,9 +48,9 @@ router.get('/amigable', (req, res, next) => {
         })
         .catch(err => next(new Error(err)))
 })
+
 // Plant filter: easy care
 router.get('/facil', (req, res, next) => {
-
     Plant
         .find({ care: 'Fácil de cuidar' })
         .then(allThePlants => {
@@ -64,6 +62,7 @@ router.get('/facil', (req, res, next) => {
         })
         .catch(err => next(new Error(err)))
 })
+
 // Plant filter: low light
 router.get('/poca-luz', (req, res, next) => {
     Plant
@@ -80,12 +79,12 @@ router.get('/poca-luz', (req, res, next) => {
 
 // Create plant
 router.get('/crear-planta', ensureAuthenticated, checkRole(['ADMIN']), (req, res, next) => {
-
     Plant
         .find()
         .then(allThePlants => res.render('plants/new-plant', { plants: allThePlants }))
         .catch(err => next(new Error(err)))
 })
+
 router.post('/crear-planta', CDNupload.single('imageUrl'), (req, res, next) => {
     const imageUrl = req.file.path
     const { name, scientificName, description, climate, height, water, spray, care, ligth, location, petFriendly } = req.body
@@ -98,7 +97,6 @@ router.post('/crear-planta', CDNupload.single('imageUrl'), (req, res, next) => {
 
 // Delete plant
 router.get('/eliminar', ensureAuthenticated, checkRole(['ADMIN']), (req, res, next) => {
-
     Plant
         .findByIdAndDelete(req.query.id)
         .then(() => res.redirect('/plantas'))

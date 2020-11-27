@@ -34,11 +34,10 @@
         <div class="care-heading">
             <h2>Plantas casi inmortales</h2>
             <hr class="short-strong center">
-            <p>Estas son plantas fáciles de cuidar, plantas para principiantes. ¡Ya no es necesario que renuncies al verde en tu hogar!</p>
+            <p>Estas son plantas fáciles de cuidar, plantas para principiantes. ¡Ya no es necesario que renuncies al
+                verde en tu hogar!</p>
         </div>
         <div class="row justify-content-center">
-
-
             {{#each plants}}
             <div class="col-md-4">
                 <figure>
@@ -49,7 +48,7 @@
                 {{#if ../isAdmin}}
                 <a href="/plantas/editar-planta?id={{id}}" class="btn btn-sm btn-dark">Editar planta</a>
                 {{/if}}
-                <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm btn-dark">Añadir a mi Jungle</a>
+                <a href="/perfil/agregar-planta/{{id}}" class="btn btn-sm fav">Añadir a mi Jungle</a>
                 <hr>
             </div>
             {{/each}}
