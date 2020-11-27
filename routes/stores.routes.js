@@ -59,13 +59,7 @@ router.get('/catalogo/:store_id', ensureAuthenticated, checkRole(['ADMIN']), (re
         })
         .catch(err => next(new Error(err)))
 })
-// router.get('/catalogo/:store_id', ensureAuthenticated, checkRole(['ADMIN']), (req, res, next) => {
-//     const storeId = req.params.store_id
-//     Plant
-//         .find(storeId)
-//         .then(allThePlants => res.render('stores/list-plants', { plants: allThePlants, isAdmin: req.user.role.includes('ADMIN'), storeId }))
-//         .catch(err => next(new Error(err)))
-// })
+
 // Add plant to store
 router.get('/agregar-planta/:store_id/:plant_id', ensureAuthenticated, (req, res, next) => {
     Store
